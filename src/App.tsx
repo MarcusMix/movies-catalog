@@ -1,62 +1,76 @@
-import './App.css';
-
 //hooks
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 
 //components
 import Movie from './components/Movies/movies.component';
 import Filter from './components/Filter/filter.component';
+import Navbar from './components/Navbar/navbar.component';
 
 //styles
 import { Movies } from './components/Movies/movies.styles'
+import { CountPage, NavbarContent, TitleYellow } from './components/Navbar/navbar.styles';
 
 //framer motion
 import { AnimatePresence } from 'framer-motion'
-import Navbar from './components/Navbar/navbar.component';
-import { NavbarContent, TitleWhite, TitleYellow } from './components/Navbar/navbar.styles';
 
-function App() {
+//context
+import { MovieContext } from './store/movie';
 
+
+const App = () => {
+
+  //state
   const [movies, setMovies] = useState<any[]>([]) // tipar da forma correta
   const [filtered, setFiltered] = useState<any[]>([])
   const [activeGenre, setActiveGenre] = useState<number>(0)
 
+  //context
+  const { moreMovies } = useContext(MovieContext)
+
+  //effect
   useEffect(() => {
     fetchMovies()
-  }, [])
+  }, [moreMovies])
+  
 
+  //fetch api movie 
   const fetchMovies = async () => {
-    const response = await fetch("https://api.themoviedb.org/3/movie/popular?api_key=28afe478b55e8d021dab50bce0e3ce05&language=en-US&page=1")
-    const dataMovies = await response.json()
-    setMovies(dataMovies.results)
-    setFiltered(dataMovies.results)
+    try {
+      const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=28afe478b55e8d021dab50bce0e3ce05&language=pt-BR&page=${moreMovies}`)
+      const dataMovies = await response.json()
+      setMovies(dataMovies.results)
+      setFiltered(dataMovies.results)
+    } catch(error) {
+      console.log(error)
+    }
   }
 
   return (
-    
-      <div className="App">
-      <Navbar>
-        <NavbarContent>
-          <TitleYellow>movies catalog</TitleYellow>
-        </NavbarContent>
-      </Navbar>
-        <Filter 
-          movies={movies} 
-          setFiltered={setFiltered} 
-          activeGenre={activeGenre} 
-          setActiveGenre={setActiveGenre}
-        />
-          <Movies
-            layout
-            className="popular-movies">
-            <AnimatePresence>
-              {filtered.map((movie) => {
-                return <Movie key={movie.id} movie={movie}/> 
-              })}
-            </AnimatePresence>
-          </Movies>
-      </div>
-
+    <div className="App">
+    <Navbar>
+      <NavbarContent>
+        <TitleYellow>movies catalog</TitleYellow>
+      </NavbarContent>
+    </Navbar>
+      <Filter 
+        movies={movies} 
+        setFiltered={setFiltered} 
+        activeGenre={activeGenre} 
+        setActiveGenre={setActiveGenre}
+      />
+      <Movies
+        layout
+        className="popular-movies">
+        <AnimatePresence>
+          {filtered.map((movie) => {
+            return <Movie key={movie.id} movie={movie}/> 
+          })}
+        </AnimatePresence>
+      </Movies>
+      <CountPage>
+        página atual {moreMovies}
+      </CountPage>
+    </div>
   );
 }
 
