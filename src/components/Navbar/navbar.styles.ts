@@ -12,10 +12,15 @@ export const NavbarContent = styled.div `
     text-align: center;
 `
 
-export const TitleWhite = styled.h1 `
-    color: white;
-`
-
 export const TitleYellow = styled.h1 `
     color: #FFC914;
+    text-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+`
+
+export const CountPage = styled.h2 `
+    margin: 0 20%;
+    color: black;
+    text-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    text-align: center;
+    padding: 5px;
 `
