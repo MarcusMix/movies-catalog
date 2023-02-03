@@ -1,7 +1,8 @@
 import { Dispatch, SetStateAction, useEffect } from 'react'
 import { FC } from "react"
+import { ButtonClick } from '../Button/button.styles'
 
-import { ButtonFiltered, FilterContainer } from './filter.styles'
+import { FilterContainer } from './filter.styles'
 
 interface FilterProps {
     movies: any
@@ -26,23 +27,24 @@ const Filter:FC<FilterProps> = ({movies, setFiltered, setActiveGenre, activeGenr
 
     return (
         <FilterContainer>
-            <ButtonFiltered 
-                className={activeGenre ===  0 ? 'active' : ''} 
-                onClick={() => setActiveGenre(0)}
-                >All
-            </ButtonFiltered>
+            <ButtonClick 
+                draggable={activeGenre === 0 ? true : false}
+                onClick={() => setActiveGenre(0)}>
+                Todos
+            </ButtonClick>
+           
 
-            <ButtonFiltered 
-                className={activeGenre === 35 ? 'active' : ''} 
+            <ButtonClick 
+                draggable={activeGenre === 35 ? true : false}
                 onClick={() => setActiveGenre(35)}
-                >Comedy
-            </ButtonFiltered>
+                >Comédia
+            </ButtonClick>
 
-            <ButtonFiltered 
-                className={activeGenre === 28 ? 'active' : ''} 
+            <ButtonClick 
+                draggable={activeGenre === 28 ? true : false}
                 onClick={() => setActiveGenre(28)}
-                >Action
-            </ButtonFiltered>
+                >Ação
+            </ButtonClick>
         </FilterContainer>
     )
 }
