@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const FilterContainer = styled.div `
-    color: yellow;
-    margin-left: 20%;
-    `
-
-
+    display: flex;
+    justify-content: space-around;
+    margin: 0 20px;
+    flex-wrap: wrap;
+`
