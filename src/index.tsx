@@ -1,15 +1,25 @@
+//react
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+//css
+import './index.css';
+
+//app
+import App from './App';
+
+//context
+import MovieProvider from './store/movie';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <MovieProvider>
+      <App />
+    </MovieProvider>
   </React.StrictMode>
 );
 
