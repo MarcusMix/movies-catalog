@@ -12,6 +12,8 @@ import { Movies } from './components/Movies/movies.styles'
 
 //framer motion
 import { AnimatePresence } from 'framer-motion'
+import Navbar from './components/Navbar/navbar.component';
+import { NavbarContent, TitleWhite, TitleYellow } from './components/Navbar/navbar.styles';
 
 function App() {
 
@@ -31,23 +33,30 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <Filter 
-        movies={movies} 
-        setFiltered={setFiltered} 
-        activeGenre={activeGenre} 
-        setActiveGenre={setActiveGenre}
-      />
-        <Movies
-          layout
-          className="popular-movies">
-          <AnimatePresence>
-            {filtered.map((movie) => {
-              return <Movie key={movie.id} movie={movie}/> 
-            })}
-          </AnimatePresence>
-        </Movies>
-    </div>
+    
+      <div className="App">
+      <Navbar>
+        <NavbarContent>
+          <TitleYellow>movies catalog</TitleYellow>
+        </NavbarContent>
+      </Navbar>
+        <Filter 
+          movies={movies} 
+          setFiltered={setFiltered} 
+          activeGenre={activeGenre} 
+          setActiveGenre={setActiveGenre}
+        />
+          <Movies
+            layout
+            className="popular-movies">
+            <AnimatePresence>
+              {filtered.map((movie) => {
+                return <Movie key={movie.id} movie={movie}/> 
+              })}
+            </AnimatePresence>
+          </Movies>
+      </div>
+
   );
 }
 
