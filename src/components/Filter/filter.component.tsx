@@ -80,7 +80,6 @@ const Filter:FC<FilterProps> = ({movies, setFiltered, setActiveGenre, activeGenr
                        <HiArrowCircleLeft size="20"/>  Anterior
                         
                 </ButtonPages>
-                    {/* <p>Página atual {moreMovies}</p> */}
                 <ButtonPages 
                     onClick={handleMoreMovies}
                     >

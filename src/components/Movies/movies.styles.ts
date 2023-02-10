@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { motion } from 'framer-motion'
+import { Link } from "react-router-dom";
 
 export const Movies = styled(motion.div)`
   margin: 0 20%;
@@ -8,6 +9,10 @@ export const Movies = styled(motion.div)`
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   font-size: 8px;
+
+  & h2 {
+    margin-left: 1rem;
+  }
 
   @media (max-width: 768px) {
     display: flex;
@@ -20,4 +25,9 @@ export const Movies = styled(motion.div)`
     text-align: center;
     font-size: 10px;
   }
+`
+
+export const SLink = styled(Link) `
+  text-decoration: none;
+  color: #313131;
 `

@@ -1,5 +1,5 @@
 import { NavbarContainer } from "./navbar.styles"
-import {ReactNode, FC} from 'react'
+import { ReactNode, FC } from 'react'
 
 interface NavbarProps {
     children: ReactNode
