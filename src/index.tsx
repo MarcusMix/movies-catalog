@@ -12,14 +12,41 @@ import App from './App';
 //context
 import MovieProvider from './store/movie';
 
+//router
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
+//pages
+import MovieDetails from './pages/movieDetails/movie-details.page';
+
+//components
+import Navbar from './components/Navbar/navbar.component';
+
+//styles
+import { NavbarContent, TitleYellow } from './components/Navbar/navbar.styles';
+import { SLink } from './components/Movies/movies.styles';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <MovieProvider>
-      <App />
-    </MovieProvider>
+    <BrowserRouter>
+      <MovieProvider>
+        <Navbar> 
+        <NavbarContent>
+          <SLink to={'/'}>
+            <TitleYellow>
+              movies catalog
+            </TitleYellow>
+          </SLink>
+        </NavbarContent>
+        </Navbar>
+        <Routes>
+          <Route path='/' element={<App />}/>
+          <Route path='/movie-details/:name' element={<MovieDetails/>}/>
+        </Routes>
+      </MovieProvider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
