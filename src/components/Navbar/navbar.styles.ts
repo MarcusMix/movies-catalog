@@ -15,6 +15,7 @@ export const NavbarContent = styled.div `
 `
 
 export const TitleYellow = styled.h1 `
+     font-family: 'Libre Franklin', sans-serif;
     color: #FFC914;
     text-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 `

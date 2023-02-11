@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const FormStyled = styled.form `
+
     & div {
         display: flex;
         justify-content: center;
@@ -9,6 +10,7 @@ export const FormStyled = styled.form `
     }
 
     & input {
+        font-family: 'Manrope', sans-serif;
         border: none;
         background-color: #051923;
         color: #fff;
