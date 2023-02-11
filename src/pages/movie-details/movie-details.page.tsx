@@ -1,4 +1,4 @@
-import MovieSpecs from "../../components/MovieSpecs/movie-specs.component"
+import MovieSpecs from "../../components/Movie-specs/movie-specs.component"
 
 const MovieDetails = () => { 
     return (
