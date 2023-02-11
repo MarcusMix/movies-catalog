@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 //splider
 import { SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/splide/dist/css/splide.min.css'
+import { ButtonClick } from "../../components/Button/button.styles";
 
 
 export const Wrapper = styled.div`
@@ -21,13 +22,12 @@ export const Card = styled(SplideSlide)`
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
-  
 
     & h2 {
         margin: auto;
         padding: 1rem;
         text-align: center;
-        font-size: 10px;
+        font-size: 20px;
     }
 
     & img {
@@ -50,10 +50,15 @@ export const Card = styled(SplideSlide)`
         font-size: 15px;
         }
     }
- 
 `
 
 export const SLink = styled(Link) `
   text-decoration: none;
   color: #313131;
+`
+
+export const WrapperInside = styled(Wrapper)`
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `

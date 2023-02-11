@@ -1,14 +1,21 @@
+//hooks
 import { useEffect, useState } from 'react'
 
 //router
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 
 //styles
-import { Card, SLink, Wrapper } from './searched-movie.styles'
+import { Card, SLink, Wrapper, WrapperInside } from './searched-movie.styles'
 
 //splide
 import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/splide/dist/css/splide.min.css'
+
+//components
+import Button from '../../components/Button/button.component'
+
+//icons
+import { RiArrowGoBackFill } from 'react-icons/ri'
 
 const SearchedMovie = () => {
 
@@ -16,9 +23,11 @@ const SearchedMovie = () => {
 
     let params = useParams()
 
+    const navigate = useNavigate()
+
     const fetchSearchMovie = async (movie: string) => {
         const response = await fetch(`
-        https://api.themoviedb.org/3/search/movie?api_key=28afe478b55e8d021dab50bce0e3ce05&language=pt-BR&query=${movie}&page=1&include_adult=false
+            https://api.themoviedb.org/3/search/movie?api_key=28afe478b55e8d021dab50bce0e3ce05&language=pt-BR&query=${movie}&page=1&include_adult=false
         `)
         const dataSearch = await response.json()
         console.log(dataSearch.results)
@@ -29,6 +38,10 @@ const SearchedMovie = () => {
         fetchSearchMovie(params.movie!)
     }, [])
 
+    const handleBackPage = () => {
+        navigate('/')
+    }
+
   return (
     <Wrapper>
         <Splide options={{
@@ -38,7 +51,7 @@ const SearchedMovie = () => {
                         perPage: 1,
                     },
                 },
-            arrows: true,
+            arrows: false,
             pagination: true,
             drag: 'free',
             gap: '1rem'
@@ -57,6 +70,9 @@ const SearchedMovie = () => {
             )
         })}
         </Splide>
+        <WrapperInside>
+            <Button onClick={handleBackPage}> <RiArrowGoBackFill/> Voltar</Button>
+        </WrapperInside>
     </Wrapper>
   )
 }
