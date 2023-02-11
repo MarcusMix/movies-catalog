@@ -12,21 +12,24 @@ import { BsFillHeartFill, BsCalendarCheckFill } from 'react-icons/bs'
 import { FaTheaterMasks } from 'react-icons/fa'
 import { RiFilePaper2Fill } from 'react-icons/ri'
 
-const MovieSpecs = () => {let params = useParams<string>()
+const MovieSpecs = () => {
+    
+    let params = useParams<string>()
 
     const [movieDetails, setMovieDetails] = useState<any>('')
 
     const fetchMovies = async () => {
-          const response = await fetch(`https://api.themoviedb.org/3/movie/${params.name}?api_key=28afe478b55e8d021dab50bce0e3ce05&&language=pt-BR`)
-          const data = await response.json()
-          console.log(data)
-          setMovieDetails(data)
-        
+        const response = await fetch(
+            `https://api.themoviedb.org/3/movie/${params.name}?api_key=28afe478b55e8d021dab50bce0e3ce05&&language=pt-BR`
+        )
+        const data = await response.json()
+        console.log(data)
+        setMovieDetails(data)
       }
 
-      useEffect(() => {
+    useEffect(() => {
         fetchMovies()
-      }, [])
+    }, [])
 
   return (
     <>
