@@ -24,6 +24,7 @@ import Navbar from './components/Navbar/navbar.component';
 //styles
 import { NavbarContent, TitleYellow } from './components/Navbar/navbar.styles';
 import { SLink } from './components/Movies/movies.styles';
+import SearchedMovie from './pages/searched-movie/searched-movie.page';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -44,6 +45,7 @@ root.render(
         <Routes>
           <Route path='/' element={<App />}/>
           <Route path='/movie-details/:name' element={<MovieDetails/>}/>
+          <Route path='/searched/:movie' element={<SearchedMovie/>}/>
         </Routes>
       </MovieProvider>
     </BrowserRouter>
