@@ -1,6 +1,10 @@
+//hooks
 import { useState } from "react"
-import { FaSearch } from "react-icons/fa"
+
+//router
 import { useNavigate } from "react-router-dom"
+
+//styles
 import { FormStyled } from "./search.styles"
 
 const Search = () => {
@@ -13,8 +17,6 @@ const Search = () => {
         e.preventDefault()
         navigate('/searched/' + input)
     }
-
-    
 
     return (
         <FormStyled onSubmit={submitHandler}>

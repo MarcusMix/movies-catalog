@@ -16,7 +16,7 @@ import MovieProvider from './store/movie';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 //pages
-import MovieDetails from './pages/movieDetails/movie-details.page';
+import MovieDetails from './pages/movie-details/movie-details.page';
 
 //components
 import Navbar from './components/Navbar/navbar.component';

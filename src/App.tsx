@@ -8,7 +8,7 @@ import Navbar from './components/Navbar/navbar.component';
 
 //styles
 import { Movies, SLink } from './components/Movies/movies.styles'
-import { CountPage, NavbarContent, TitleYellow } from './components/Navbar/navbar.styles';
+import { CountPage } from './components/Navbar/navbar.styles';
 
 //framer motion
 import { AnimatePresence } from 'framer-motion'
@@ -40,7 +40,6 @@ const App = () => {
     try {
       const response = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=28afe478b55e8d021dab50bce0e3ce05&language=pt-BR&page=${moreMovies}`)
       const dataMovies = await response.json()
-      console.log(dataMovies.results)
       setMovies(dataMovies.results)
       setFiltered(dataMovies.results)
     } catch(error) {
@@ -71,7 +70,9 @@ const App = () => {
           </AnimatePresence>
       </Movies>
       <CountPage>
-        página atual {moreMovies}
+      Anterior: {moreMovies - 1 === 0 ? moreMovies : moreMovies -1}
+     | Página atual: {moreMovies}
+     | Proxima: {moreMovies + 1}
       </CountPage>
     </div>
   );

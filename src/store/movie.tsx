@@ -1,12 +1,12 @@
-import { FC, createContext, useState, ReactNode } from "react";
+//hooks
+import { FC, createContext, useState } from "react";
+
+//interface
+import MovieProps from "../components/types/movie.types";
 
 export const MovieContext = createContext<number | any>(1)
 
-interface MovieProps {
-    children?: ReactNode 
-}
-
-const MovieProvider:FC<MovieProps> = ({ children}) => {
+const MovieProvider:FC<MovieProps> = ({ children }) => {
 
     const [moreMovies, setMoreMovies] = useState<number | any>(1)
 

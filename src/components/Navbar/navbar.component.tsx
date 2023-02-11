@@ -1,9 +1,12 @@
+//styles
 import { NavbarContainer } from "./navbar.styles"
-import { ReactNode, FC } from 'react'
 
-interface NavbarProps {
-    children: ReactNode
-}
+//react
+import {  FC } from 'react'
+
+//interface
+import NavbarProps from "../types/navbar.types"
+
 
 const Navbar:FC<NavbarProps> = ({children}) => {
     return (

@@ -1,27 +1,20 @@
 //react
-import { Dispatch, SetStateAction, useContext, useEffect, FC } from 'react'
+import {  useContext, useEffect, FC } from 'react'
 
 //context
 import { MovieContext } from '../../store/movie'
 
-//components
-import { ButtonClick, ButtonPages } from '../Button/button.styles'
-
 //styles
+import { ButtonClick, ButtonPages } from '../Button/button.styles'
 import { FilterContainer } from './filter.styles'
 
 //icons
 import { HiArrowCircleLeft, HiArrowCircleRight } from 'react-icons/hi'
 
 //interface
-interface FilterProps {
-    movies: any
-    setFiltered: Dispatch<SetStateAction<string[]>>
-    setActiveGenre: Dispatch<SetStateAction<number>>
-    activeGenre: number
-}
+import FilterProps from '../types/filter.types'
 
-const Filter:FC<FilterProps> = ({movies, setFiltered, setActiveGenre, activeGenre}) => {
+const Filter:FC<FilterProps> = ({ movies, setFiltered, setActiveGenre, activeGenre }) => {
 
     //context
     const {moreMovies, setMoreMovies} = useContext(MovieContext)
@@ -48,7 +41,6 @@ const Filter:FC<FilterProps> = ({movies, setFiltered, setActiveGenre, activeGenr
         }
         setMoreMovies(moreMovies - 1)
     }
-
 
     return (
         <FilterContainer>
