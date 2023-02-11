@@ -71,6 +71,24 @@ const Filter:FC<FilterProps> = ({movies, setFiltered, setActiveGenre, activeGenr
                 >Ação
             </ButtonClick>
 
+            <ButtonClick 
+                draggable={activeGenre === 12 ? true : false}
+                onClick={() => setActiveGenre(12)}
+                >Aventura
+            </ButtonClick>
+
+            <ButtonClick 
+                draggable={activeGenre === 27 ? true : false}
+                onClick={() => setActiveGenre(27)}
+                >Terror
+            </ButtonClick>
+
+            <ButtonClick 
+                draggable={activeGenre === 18 ? true : false}
+                onClick={() => setActiveGenre(18)}
+                >Drama
+            </ButtonClick>
+
             </div>
 
             <div>
