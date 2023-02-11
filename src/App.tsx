@@ -16,6 +16,7 @@ import { AnimatePresence } from 'framer-motion'
 //context
 import { MovieContext } from './store/movie';
 import { Link } from 'react-router-dom';
+import Search from './components/Search/search.component';
 
 
 const App = () => {
@@ -49,6 +50,7 @@ const App = () => {
 
   return (
     <div className="App">
+        <Search/>
          <Filter 
         movies={movies} 
         setFiltered={setFiltered} 
