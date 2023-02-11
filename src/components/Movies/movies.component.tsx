@@ -1,11 +1,13 @@
+//react
 import { FC } from "react"
+
+//framer motion
 import { motion } from 'framer-motion'
 
-interface MovieProps {
-    movie: any
-}
+//interface
+import MovieProps from "../types/movies.types"
 
-const Movie:FC<MovieProps>  = ({movie})=> {
+const Movie:FC<MovieProps>  = ({ movie })=> {
     return (
         <motion.div 
           layout
@@ -14,7 +16,10 @@ const Movie:FC<MovieProps>  = ({movie})=> {
           exit={{opacity: 0}}
         > 
             <h2>{movie.title}</h2>
-            <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="" />
+            <img 
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+                alt={movie.title} 
+            />
         </motion.div>
     )
 }
