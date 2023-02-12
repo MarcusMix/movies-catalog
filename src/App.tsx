@@ -16,8 +16,11 @@ import { AnimatePresence } from 'framer-motion'
 //context
 import { MovieContext } from './store/movie';
 
-import { HiArrowCircleLeft, HiArrowCircleRight } from 'react-icons/hi'
+//icons
+
+import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 import { WrapperInside } from './components/Movie-specs/movie-specs.styles';
+import { ButtonPages } from './components/Button/button.styles';
 
 
 const App = () => {
@@ -85,27 +88,27 @@ const handleBackMovies = () => {
         Páginação
         <WrapperInside>
           <span onClick={handleBackMovies}>
-          <HiArrowCircleLeft/>
+          <MdKeyboardArrowLeft/>
           </span>
           {moreMovies > 1 && (
-            <span 
+            <ButtonPages 
                 onClick={handleBackMovies}
                 >
                     {moreMovies - 1 === 0 ? moreMovies : moreMovies -1}
                     
-            </span>
+            </ButtonPages>
           )}
-          <span style={{color: '#a81925'}}>
+          <ButtonPages style={{background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,199,18,1) 0%, rgba(255,255,6,1) 100%)'}}>
             {moreMovies}
-          </span>
-          <span 
+          </ButtonPages>
+          <ButtonPages 
               onClick={handleMoreMovies}
               >
                 {moreMovies + 1}
                   
-          </span>
+          </ButtonPages>
           <span onClick={handleMoreMovies}>
-            <HiArrowCircleRight/>
+            <MdKeyboardArrowRight/>
           </span>
         </WrapperInside>
       </CountPage>
