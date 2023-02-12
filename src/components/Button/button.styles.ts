@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ButtonClick = styled.button` 
-  margin: 10px 10px;
+  margin: 20px 10px;
   height: 1.8rem;
   border: none;
   background: ${props => props.draggable ? 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,199,18,1) 0%, rgba(255,255,6,1) 100%) ': 'white'};

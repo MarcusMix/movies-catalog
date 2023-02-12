@@ -46,4 +46,14 @@ export const WrapperInside = styled(Wrapper)`
     display: flex;
     justify-content: center;
     align-items: center;
+
+    & span {
+        padding: 0 1.5rem;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    & svg {
+        vertical-align: -10%;
+    }
 `
