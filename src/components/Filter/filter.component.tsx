@@ -83,7 +83,7 @@ const Filter:FC<FilterProps> = ({ movies, setFiltered, setActiveGenre, activeGen
 
             </div>
 
-            <div>
+            {/* <div>
                 <ButtonPages 
                     onClick={handleBackMovies}
                     >
@@ -96,7 +96,7 @@ const Filter:FC<FilterProps> = ({ movies, setFiltered, setActiveGenre, activeGen
                        <HiArrowCircleRight size="20"/> Próximo
                         
                 </ButtonPages>
-            </div>
+            </div> */}
 
         </FilterContainer>
     )
