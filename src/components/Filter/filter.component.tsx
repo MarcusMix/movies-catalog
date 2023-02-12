@@ -1,23 +1,14 @@
 //react
-import {  useContext, useEffect, FC } from 'react'
-
-//context
-import { MovieContext } from '../../store/movie'
+import { useEffect, FC } from 'react'
 
 //styles
-import { ButtonClick, ButtonPages } from '../Button/button.styles'
+import { ButtonClick } from '../Button/button.styles'
 import { FilterContainer } from './filter.styles'
-
-//icons
-import { HiArrowCircleLeft, HiArrowCircleRight } from 'react-icons/hi'
 
 //interface
 import FilterProps from '../types/filter.types'
 
 const Filter:FC<FilterProps> = ({ movies, setFiltered, setActiveGenre, activeGenre }) => {
-
-    //context
-    const {moreMovies, setMoreMovies} = useContext(MovieContext)
 
     useEffect(() => {
         if(activeGenre === 0) {
@@ -29,18 +20,6 @@ const Filter:FC<FilterProps> = ({ movies, setFiltered, setActiveGenre, activeGen
         )
         setFiltered(filtered)
     },[activeGenre])
-
-
-    const handleMoreMovies = () => {
-        setMoreMovies(moreMovies + 1)
-    }
-
-    const handleBackMovies = () => {
-        if(moreMovies === 1) {
-            return setMoreMovies(moreMovies)
-        }
-        setMoreMovies(moreMovies - 1)
-    }
 
     return (
         <FilterContainer>
@@ -82,21 +61,6 @@ const Filter:FC<FilterProps> = ({ movies, setFiltered, setActiveGenre, activeGen
             </ButtonClick>
 
             </div>
-
-            {/* <div>
-                <ButtonPages 
-                    onClick={handleBackMovies}
-                    >
-                       <HiArrowCircleLeft size="20"/>  Anterior
-                        
-                </ButtonPages>
-                <ButtonPages 
-                    onClick={handleMoreMovies}
-                    >
-                       <HiArrowCircleRight size="20"/> Próximo
-                        
-                </ButtonPages>
-            </div> */}
 
         </FilterContainer>
     )
