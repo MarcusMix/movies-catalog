@@ -17,6 +17,8 @@ export const ButtonClick = styled.button`
 export const ButtonPages = styled(ButtonClick) `
   height: 50px;
   text-align: center;
+  width: 30px;
+  height: 30px;
 
   :active {
     background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,199,18,1) 0%, rgba(255,255,6,1) 100%);
