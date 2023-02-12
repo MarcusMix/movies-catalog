@@ -6,8 +6,6 @@ import { Link } from "react-router-dom";
 //splider
 import { SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/splide/dist/css/splide.min.css'
-import { ButtonClick } from "../../components/Button/button.styles";
-
 
 export const Wrapper = styled.div`
     margin: 0 10%;
