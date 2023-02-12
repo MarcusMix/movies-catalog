@@ -4,7 +4,7 @@ import { useState, useEffect, useContext } from 'react';
 //components
 import Movie from './components/Movies/movies.component';
 import Filter from './components/Filter/filter.component';
-import Navbar from './components/Navbar/navbar.component';
+import Search from './components/Search/search.component';
 
 //styles
 import { Movies, SLink } from './components/Movies/movies.styles'
@@ -15,8 +15,9 @@ import { AnimatePresence } from 'framer-motion'
 
 //context
 import { MovieContext } from './store/movie';
-import { Link } from 'react-router-dom';
-import Search from './components/Search/search.component';
+
+import { HiArrowCircleLeft, HiArrowCircleRight } from 'react-icons/hi'
+import { WrapperInside } from './components/Movie-specs/movie-specs.styles';
 
 
 const App = () => {
@@ -27,7 +28,7 @@ const App = () => {
   const [activeGenre, setActiveGenre] = useState<number>(0)
 
   //context
-  const { moreMovies } = useContext(MovieContext)
+  const { moreMovies, setMoreMovies } = useContext(MovieContext)
 
   //effect
   useEffect(() => {
@@ -47,10 +48,21 @@ const App = () => {
     }
   }
 
+  const handleMoreMovies = () => {
+    setMoreMovies(moreMovies + 1)
+}
+
+const handleBackMovies = () => {
+    if(moreMovies === 1) {
+        return setMoreMovies(moreMovies)
+    }
+    setMoreMovies(moreMovies - 1)
+}
+
   return (
     <div className="App">
-        <Search/>
-         <Filter 
+      <Search/>
+      <Filter 
         movies={movies} 
         setFiltered={setFiltered} 
         activeGenre={activeGenre} 
@@ -70,9 +82,32 @@ const App = () => {
           </AnimatePresence>
       </Movies>
       <CountPage>
-      Anterior: {moreMovies - 1 === 0 ? moreMovies : moreMovies -1}
-     | Página atual: {moreMovies}
-     | Proxima: {moreMovies + 1}
+        Páginação
+        <WrapperInside>
+          <span onClick={handleBackMovies}>
+          <HiArrowCircleLeft/>
+          </span>
+          {moreMovies > 1 && (
+            <span 
+                onClick={handleBackMovies}
+                >
+                    {moreMovies - 1 === 0 ? moreMovies : moreMovies -1}
+                    
+            </span>
+          )}
+          <span style={{color: '#a81925'}}>
+            {moreMovies}
+          </span>
+          <span 
+              onClick={handleMoreMovies}
+              >
+                {moreMovies + 1}
+                  
+          </span>
+          <span onClick={handleMoreMovies}>
+            <HiArrowCircleRight/>
+          </span>
+        </WrapperInside>
       </CountPage>
     </div>
   );
