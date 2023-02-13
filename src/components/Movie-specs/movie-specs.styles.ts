@@ -17,7 +17,7 @@ export const MovieDisplay = styled.div`
     justify-content: center;
     flex-direction: column;
     align-items: flex-start;
-    margin: 0 30%;
+    margin: 0 10%;
 
     & h1 {
         margin: auto;
@@ -32,16 +32,24 @@ export const MovieDisplay = styled.div`
     }
 
     & img {
-        width: 250px;
+        max-width: 900px;
         height: 100%;
         margin: auto;
+        border-radius: 0;
+    }
+    
+    
+    @media (max-width: 768px) {
+        img {
+            width: 300px;
+            height: 100%;
+        }
     }
 
     & svg {
         vertical-align: -10%;
     }
 `
-
 export const WrapperInside = styled(Wrapper)`
     display: flex;
     justify-content: center;
