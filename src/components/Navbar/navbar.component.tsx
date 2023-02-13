@@ -5,7 +5,7 @@ import { NavbarContainer } from "./navbar.styles"
 import {  FC } from 'react'
 
 //interface
-import NavbarProps from "../types/navbar.types"
+import NavbarProps from "../../types/navbar.types"
 
 
 const Navbar:FC<NavbarProps> = ({children}) => {

@@ -2,7 +2,7 @@
 import { FC, createContext, useState } from "react";
 
 //interface
-import MovieProps from "../components/types/movie.types";
+import MovieProps from "../types/movie.types";
 
 export const MovieContext = createContext<number | any>(1)
 

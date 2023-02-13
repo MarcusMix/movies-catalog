@@ -5,7 +5,7 @@ import { FC } from "react"
 import { motion } from 'framer-motion'
 
 //interface
-import MovieProps from "../types/movies.types"
+import MovieProps from "../../types/movies.types"
 
 const Movie:FC<MovieProps>  = ({ movie })=> {
     return (

@@ -6,9 +6,11 @@ import { ButtonClick } from '../Button/button.styles'
 import { FilterContainer } from './filter.styles'
 
 //interface
-import FilterProps from '../types/filter.types'
+import FilterProps from '../../types/filter.types'
 
 const Filter:FC<FilterProps> = ({ movies, setFiltered, setActiveGenre, activeGenre }) => {
+
+    // const [activeTab, setActiveTab] = useState<string>('todos')
 
     useEffect(() => {
         if(activeGenre === 0) {
@@ -21,10 +23,11 @@ const Filter:FC<FilterProps> = ({ movies, setFiltered, setActiveGenre, activeGen
         setFiltered(filtered)
     },[activeGenre])
 
+
     return (
         <FilterContainer>
             <div>
-            <ButtonClick 
+            <ButtonClick
                 draggable={activeGenre === 0 ? true : false}
                 onClick={() => setActiveGenre(0)}>
                 Todos
