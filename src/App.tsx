@@ -5,6 +5,7 @@ import { useState, useEffect, useContext } from 'react';
 import Movie from './components/Movies/movies.component';
 import Filter from './components/Filter/filter.component';
 import Search from './components/Search/search.component';
+import Container from './components/Container/container.component'
 
 //styles
 import { Movies, SLink } from './components/Movies/movies.styles'
@@ -17,11 +18,9 @@ import { AnimatePresence } from 'framer-motion'
 import { MovieContext } from './store/movie';
 
 //icons
-
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 import { WrapperInside } from './components/Movie-specs/movie-specs.styles';
 import { ButtonPages } from './components/Button/button.styles';
-
 
 const App = () => {
 
@@ -29,6 +28,13 @@ const App = () => {
   const [movies, setMovies] = useState<any[]>([]) // tipar da forma correta
   const [filtered, setFiltered] = useState<any[]>([])
   const [activeGenre, setActiveGenre] = useState<number>(0)
+
+  // //theme
+  // const [theme, setTheme] = useState<any>('light')
+
+  // const themeToggle = () => {
+  //     theme === 'light' ? setTheme('dark') : setTheme('light')
+  // }
 
   //context
   const { moreMovies, setMoreMovies } = useContext(MovieContext)
@@ -53,65 +59,67 @@ const App = () => {
 
   const handleMoreMovies = () => {
     setMoreMovies(moreMovies + 1)
-}
+  }
 
-const handleBackMovies = () => {
-    if(moreMovies === 1) {
-        return setMoreMovies(moreMovies)
-    }
-    setMoreMovies(moreMovies - 1)
-}
+  const handleBackMovies = () => {
+      if(moreMovies === 1) {
+          return setMoreMovies(moreMovies)
+      }
+      setMoreMovies(moreMovies - 1)
+  }
 
   return (
     <div className="App">
-      <Search/>
-      <Filter 
-        movies={movies} 
-        setFiltered={setFiltered} 
-        activeGenre={activeGenre} 
-        setActiveGenre={setActiveGenre}
-      />
-      <Movies
-        layout
-        className="popular-movies">
-        <AnimatePresence>
-          {filtered.map((movie) => {
-            return (
-              <SLink to={'/movie-details/' + movie.id}>
-                <Movie key={movie.id} movie={movie}/> 
-              </SLink>
-            )
-          })}
-          </AnimatePresence>
-      </Movies>
-      <CountPage>
-        Páginação
-        <WrapperInside>
-          <span onClick={handleBackMovies}>
-          <MdKeyboardArrowLeft/>
-          </span>
-          {moreMovies > 1 && (
-            <ButtonPages 
-                onClick={handleBackMovies}
-                >
-                    {moreMovies - 1 === 0 ? moreMovies : moreMovies -1}
-                    
-            </ButtonPages>
-          )}
-          <ButtonPages style={{background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,199,18,1) 0%, rgba(255,255,6,1) 100%)'}}>
-            {moreMovies}
-          </ButtonPages>
-          <ButtonPages 
-              onClick={handleMoreMovies}
-              >
-                {moreMovies + 1}
-                  
-          </ButtonPages>
-          <span onClick={handleMoreMovies}>
-            <MdKeyboardArrowRight/>
-          </span>
-        </WrapperInside>
-      </CountPage>
+        <Container>
+          <Search/>
+          <Filter 
+            movies={movies} 
+            setFiltered={setFiltered} 
+            activeGenre={activeGenre} 
+            setActiveGenre={setActiveGenre}
+          />
+          <Movies
+            layout
+            className="popular-movies">
+            <AnimatePresence>
+              {filtered.map((movie) => {
+                return (
+                  <SLink to={'/movie-details/' + movie.id}>
+                    <Movie key={movie.id} movie={movie}/> 
+                  </SLink>
+                )
+              })}
+              </AnimatePresence>
+          </Movies>
+          <CountPage>
+            Páginação
+            <WrapperInside>
+              <span onClick={handleBackMovies}>
+              <MdKeyboardArrowLeft/>
+              </span>
+              {moreMovies > 1 && (
+                <ButtonPages 
+                    onClick={handleBackMovies}
+                    >
+                        {moreMovies - 1 === 0 ? moreMovies : moreMovies -1}
+                        
+                </ButtonPages>
+              )}
+              <ButtonPages style={{background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,199,18,1) 0%, rgba(255,255,6,1) 100%)'}}>
+                {moreMovies}
+              </ButtonPages>
+              <ButtonPages 
+                  onClick={handleMoreMovies}
+                  >
+                    {moreMovies + 1}
+                      
+              </ButtonPages>
+              <span onClick={handleMoreMovies}>
+                <MdKeyboardArrowRight/>
+              </span>
+            </WrapperInside>
+          </CountPage>
+        </Container>
     </div>
   );
 }
