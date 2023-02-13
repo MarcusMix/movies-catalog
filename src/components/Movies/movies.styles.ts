@@ -1,5 +1,9 @@
 import styled from "styled-components";
+
+//framer motion
 import { motion } from 'framer-motion'
+
+//router
 import { Link } from "react-router-dom";
 
 export const Movies = styled(motion.div)`
@@ -9,6 +13,7 @@ export const Movies = styled(motion.div)`
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
   font-size: 8px;
+  background-color: ${(props) => props.theme.background};
 
   & h2 {
     margin-left: 1rem;
@@ -29,5 +34,5 @@ export const Movies = styled(motion.div)`
 
 export const SLink = styled(Link) `
   text-decoration: none;
-  color: #313131;
+  color: ${props => props.theme.fontColor};
 `
