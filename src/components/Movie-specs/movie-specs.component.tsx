@@ -11,11 +11,14 @@ import { Wrapper, MovieDisplay, WrapperInside } from './movie-specs.styles'
 import { BsFillHeartFill, BsCalendarCheckFill } from 'react-icons/bs'
 import { FaTheaterMasks } from 'react-icons/fa'
 import { RiFilePaper2Fill, RiArrowGoBackFill } from 'react-icons/ri'
+import { BiTime } from 'react-icons/bi'
 
 //components
 import Button from '../Button/button.component'
 
 const MovieSpecs = () => {
+
+    const imageURL = 'https://image.tmdb.org/t/p/w500'
     
     let params = useParams<string>()
 
@@ -45,9 +48,10 @@ const MovieSpecs = () => {
         <Wrapper>
             <MovieDisplay>
             <h1>{movieDetails.title}</h1>
-            <img src={`https://image.tmdb.org/t/p/w500${movieDetails.poster_path}`} alt={movieDetails.title} />
+            <img src={imageURL + movieDetails.backdrop_path} alt={movieDetails.title} />
             <h3> <BsCalendarCheckFill color='#09BC8A'/> Lançamento: {movieDetails.release_date}</h3>
             <h3> <BsFillHeartFill color='#CC0000'/> Nota: {movieDetails.vote_average}</h3>
+            <h3> <BiTime /> Duração: {movieDetails.runtime} minutos</h3>
             <h3> <FaTheaterMasks color='#1B98E0'/> Gêneros</h3>
             <div>
                 <ul>

@@ -6,10 +6,10 @@ export const FormStyled = styled.form `
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 1rem;
     }
-
+    
     & input {
+        margin-top: 1rem;
         font-family: 'Manrope', sans-serif;
         border: none;
         background-color: #051923;
@@ -19,8 +19,9 @@ export const FormStyled = styled.form `
         outline: none;
         width: 200px;
     }
-
+    
     & svg {
+        background: red;
        position: fixed;
        left: 40%;
        color: red;
