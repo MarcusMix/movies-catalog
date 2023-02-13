@@ -30,6 +30,11 @@ import { NavbarContent, TitleYellow } from './components/Navbar/navbar.styles';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from './theme/theme';
 import { GlobalStyles } from './theme/globalStyles';
+import Footer from './components/Footer/footer.component';
+import { FooterContent } from './components/Footer/footer.styles';
+
+//icons
+import { AiFillHeart } from 'react-icons/ai'
 
 
 const root = ReactDOM.createRoot(
@@ -55,6 +60,14 @@ root.render(
               <Route path='/movie-details/:name' element={<MovieDetails/>}/>
               <Route path='/searched/:movie' element={<SearchedMovie/>}/>
             </Routes>
+            <Footer>
+              <FooterContent>
+              Desenvolvido com<AiFillHeart/> 
+                <SLink to={'https://www.linkedin.com/in/marcus-sandi/'}>
+                    por Marcus Sandi
+                </SLink>
+              </FooterContent>
+            </Footer>
           </MovieProvider>
         </BrowserRouter>
     </ThemeProvider>
