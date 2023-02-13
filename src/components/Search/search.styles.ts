@@ -18,6 +18,7 @@ export const FormStyled = styled.form `
         border-radius: 1rem;
         outline: none;
         width: 200px;
+        font-size: 1rem;
     }
     
     & svg {
