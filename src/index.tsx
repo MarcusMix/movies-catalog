@@ -33,9 +33,6 @@ import { GlobalStyles } from './theme/globalStyles';
 import Footer from './components/Footer/footer.component';
 import { FooterContent } from './components/Footer/footer.styles';
 
-//icons
-import { AiFillHeart } from 'react-icons/ai'
-
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -60,14 +57,7 @@ root.render(
               <Route path='/movie-details/:name' element={<MovieDetails/>}/>
               <Route path='/searched/:movie' element={<SearchedMovie/>}/>
             </Routes>
-            <Footer>
-              <FooterContent>
-              Desenvolvido com<AiFillHeart/> 
-                <SLink to={'https://www.linkedin.com/in/marcus-sandi/'}>
-                    por Marcus Sandi
-                </SLink>
-              </FooterContent>
-            </Footer>
+            <Footer/>
           </MovieProvider>
         </BrowserRouter>
     </ThemeProvider>
