@@ -1,6 +1,7 @@
+import { motion } from "framer-motion";
 import styled from "styled-components";
 
-export const ButtonClick = styled.button` 
+export const ButtonClick = styled(motion.button)` 
   margin: 20px 10px;
   height: 1.8rem;
   border: none;
