@@ -67,7 +67,11 @@ const MovieSpecs = () => {
             </MovieDisplay>
         </Wrapper>
         <WrapperInside>
-            <Button onClick={handleBackPage} > <RiArrowGoBackFill/> Voltar</Button>
+            <Button 
+                onClick={handleBackPage}
+                whileTap={{ scale: 0.9 }} 
+            > <RiArrowGoBackFill/> Voltar
+            </Button>
         </WrapperInside>
     </>
   )
