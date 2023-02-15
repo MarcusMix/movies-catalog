@@ -81,7 +81,7 @@ const App = () => {
           <Movies
             layout
             className="popular-movies">
-            <AnimatePresence>
+              <AnimatePresence>
               {filtered.map((movie) => {
                 return (
                   <SLink to={'/movie-details/' + movie.id}>
@@ -89,12 +89,14 @@ const App = () => {
                   </SLink>
                 )
               })}
-              </AnimatePresence>
+                    </AnimatePresence>
           </Movies>
           <CountPage>
             Páginação
             <WrapperInside>
-              <span onClick={handleBackMovies}>
+              <span 
+                onClick={handleBackMovies}
+              >
               <MdKeyboardArrowLeft/>
               </span>
               {moreMovies > 1 && (
@@ -114,7 +116,9 @@ const App = () => {
                     {moreMovies + 1}
                       
               </ButtonPages>
-              <span onClick={handleMoreMovies}>
+              <span 
+                onClick={handleMoreMovies}
+              >
                 <MdKeyboardArrowRight/>
               </span>
             </WrapperInside>
