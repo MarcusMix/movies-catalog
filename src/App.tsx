@@ -29,13 +29,6 @@ const App = () => {
   const [filtered, setFiltered] = useState<any[]>([])
   const [activeGenre, setActiveGenre] = useState<number>(0)
 
-  // //theme
-  // const [theme, setTheme] = useState<any>('light')
-
-  // const themeToggle = () => {
-  //     theme === 'light' ? setTheme('dark') : setTheme('light')
-  // }
-
   //context
   const { moreMovies, setMoreMovies } = useContext(MovieContext)
 
