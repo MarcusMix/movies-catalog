@@ -10,10 +10,11 @@ import MovieProps from "../../types/movies.types"
 const Movie:FC<MovieProps>  = ({ movie })=> {
     return (
         <motion.div 
-          layout
-          animate={{opacity: 1}} 
-          initial={{opacity: 0}} 
-          exit={{opacity: 0}}
+            layout
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            whileHover={{ scale: 1.05 }}
         > 
             <h2>{movie.title}</h2>
             <img 
