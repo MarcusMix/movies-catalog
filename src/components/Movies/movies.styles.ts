@@ -23,12 +23,18 @@ export const Movies = styled(motion.div)`
     display: flex;
     align-items: center;
     align-content: center;
+    justify-content: center;
     flex-wrap: wrap;
-    max-width: 250px; 
+    max-width: 350px; 
     margin: 0 auto;
     padding: 0;
     text-align: center;
     font-size: 10px;
+
+    & img {
+      width: 230px;
+      border-radius: 0.5rem;
+    }
   }
 `
 
