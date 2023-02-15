@@ -3,13 +3,13 @@ import styled from "styled-components";
 export const FooterStyled = styled.footer `
     width: 100%;
     background-color: ${props => props.theme.border};
-    background-image: linear-gradient(to top, #ffc914, #f9d20c, #f3da07, #ebe309, #e3eb12);
+    background-image: ${props => props.theme.gradient};
 `
 
-export const FooterContent = styled.div `
+export const FooterContent = styled.div`
     text-align: center;
     color: ${props => props.theme.fontColor};
-    `
+`
 
 export const FooterRow = styled.div `
     display: flex;
@@ -21,7 +21,7 @@ export const FooterRow = styled.div `
     hr {
         width: 80vw;
     }
-    `
+`
 
 export const FooterColumn = styled.div`
     padding: 0 1rem;
@@ -36,7 +36,11 @@ export const FooterColumn = styled.div`
         color: ${props => props.theme.fontColor};
         cursor: pointer;
     }
-    `
+
+    a:hover {
+        text-decoration: underline;
+    }
+`
 
 export const FooterBottom = styled.div`
     padding: 1rem;
@@ -46,5 +50,9 @@ export const FooterBottom = styled.div`
         text-decoration: none;
         color: ${props => props.theme.fontColor};
         cursor: pointer;
+    }
+
+    a:hover {
+        text-decoration: underline;
     }
 `

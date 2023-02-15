@@ -6,7 +6,6 @@ export const FilterContainer = styled.div `
     margin: 0 20px;
     flex-wrap: wrap;
     background-color: ${(props) => props.theme.background};
-    animation: all 0.25s ease;
 
     & div {
         @media (max-width: 768px) {
