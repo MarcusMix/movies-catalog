@@ -16,6 +16,11 @@ import { BiTime } from 'react-icons/bi'
 //components
 import Button from '../Button/button.component'
 
+//skeleton loading
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
+import { SkeletonTheme } from 'react-loading-skeleton';
+
 const MovieSpecs = () => {
 
     const imageURL = 'https://image.tmdb.org/t/p/w500'
@@ -47,12 +52,19 @@ const MovieSpecs = () => {
     <>
         <Wrapper>
             <MovieDisplay>
-            <h1>{movieDetails.title}</h1>
-            <img src={imageURL + movieDetails.backdrop_path} alt={movieDetails.title} />
-            <h3> <BsCalendarCheckFill color='#09BC8A'/> Lançamento: {movieDetails.release_date}</h3>
-            <h3> <BsFillHeartFill color='#CC0000'/> Nota: {movieDetails.vote_average}</h3>
-            <h3> <BiTime /> Duração: {movieDetails.runtime} minutos</h3>
-            <h3> <FaTheaterMasks color='#1B98E0'/> Gêneros</h3>
+            <SkeletonTheme baseColor="#b9b9b9" highlightColor="#9e9e9e">
+
+            
+            <h1>{movieDetails.title || <Skeleton/>}</h1> 
+
+            {<img src={imageURL + movieDetails.backdrop_path} alt={movieDetails.title} /> 
+            || 
+            <div><Skeleton style={{maxWidth: '600px', minWidth: '200px'}}/></div>}
+
+            {<h3> <BsCalendarCheckFill color='#09BC8A'/> Lançamento: {movieDetails.release_date}</h3> || <Skeleton/>}
+            {<h3> <BsFillHeartFill color='#CC0000'/> Nota: {movieDetails.vote_average}</h3> || <Skeleton/>}
+            {<h3> <BiTime /> Duração: {movieDetails.runtime} minutos</h3> || <Skeleton/>}
+            {<h3> <FaTheaterMasks color='#1B98E0'/> Gêneros</h3> || <Skeleton/> }
             <div>
                 <ul>
                     {movieDetails.genres?.map((type: any) => {
@@ -63,7 +75,8 @@ const MovieSpecs = () => {
                 </ul>
             </div>
             <h3> <RiFilePaper2Fill color='#F7CE5B'/> Sinópse</h3>
-            <p>{movieDetails.overview}</p>
+            {<p>{movieDetails.overview}</p> || <Skeleton count={5}/>}
+            </SkeletonTheme>
             </MovieDisplay>
         </Wrapper>
         <WrapperInside>
