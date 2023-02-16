@@ -21,6 +21,9 @@ import { MovieContext } from './store/movie';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 import { WrapperInside } from './components/Movie-specs/movie-specs.styles';
 import { ButtonPages } from './components/Button/button.styles';
+import SkeletonCard from './components/Skeleton/skeleton.component';
+import { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const App = () => {
 
@@ -28,6 +31,7 @@ const App = () => {
   const [movies, setMovies] = useState<any[]>([]) // tipar da forma correta
   const [filtered, setFiltered] = useState<any[]>([])
   const [activeGenre, setActiveGenre] = useState<number>(0)
+  const [isLoading, setIsLoading] = useState<boolean>(true)
 
   //context
   const { moreMovies, setMoreMovies } = useContext(MovieContext)
@@ -45,6 +49,7 @@ const App = () => {
       const dataMovies = await response.json()
       setMovies(dataMovies.results)
       setFiltered(dataMovies.results)
+      setIsLoading(false)
     } catch(error) {
       console.log(error)
     }
@@ -74,6 +79,19 @@ const App = () => {
           <Movies
             layout
             className="popular-movies">
+              {isLoading && (
+                <SkeletonTheme baseColor="#b9b9b9" highlightColor="#9e9e9e">
+                  <SkeletonCard/>
+                  <SkeletonCard/>  
+                  <SkeletonCard/>  
+                  <SkeletonCard/>  
+                  <SkeletonCard/>  
+                  <SkeletonCard/>  
+                  <SkeletonCard/>  
+                  <SkeletonCard/>  
+                  <SkeletonCard/>  
+                </SkeletonTheme>
+              )}
               <AnimatePresence>
                 {filtered.map((movie) => {
                   return (
