@@ -59,7 +59,7 @@ const SearchedMovie = () => {
 
         {searchMovie.map((movie: any) => {
             return (
-                <SplideSlide key={movie.id}  >
+                <SplideSlide key={movie.id}>
                     <Card key={movie.id}>
                         <SLink to={'/movie-details/' + movie.id}>
                         <h2>{movie.title}</h2>
