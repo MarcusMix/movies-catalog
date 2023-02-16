@@ -75,17 +75,16 @@ const App = () => {
             layout
             className="popular-movies">
               <AnimatePresence>
-              {filtered.map((movie) => {
-                return (
-                  <SLink to={'/movie-details/' + movie.id}>
-                    <Movie key={movie.id} movie={movie}/> 
-                  </SLink>
-                )
-              })}
-                    </AnimatePresence>
+                {filtered.map((movie) => {
+                  return (
+                    <SLink to={'/movie-details/' + movie.id}>
+                      <Movie key={movie.id} movie={movie}/> 
+                    </SLink>
+                  )
+                })}
+              </AnimatePresence>
           </Movies>
           <CountPage>
-            Páginação
             <WrapperInside>
               <span 
                 onClick={handleBackMovies}
