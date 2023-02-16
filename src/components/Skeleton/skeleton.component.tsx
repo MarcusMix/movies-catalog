@@ -5,8 +5,8 @@ import { SkeletonStyled } from './skeleton'
 const SkeletonCard:FunctionComponent = () => {
   return (
     <SkeletonStyled>
-        <Skeleton count={1} width={160}/>      
-        <Skeleton width={220} height={280}/>
+        <Skeleton count={1} width={140}/>      
+        <Skeleton  height={280} style={{maxWidth: '400px', minWidth: '220px', maxHeight: '700px', minHeight: '260px', marginTop: '10px'}}/>
     </SkeletonStyled>
   )
 }
