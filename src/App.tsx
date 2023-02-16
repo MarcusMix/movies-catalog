@@ -6,6 +6,7 @@ import Movie from './components/Movies/movies.component';
 import Filter from './components/Filter/filter.component';
 import Search from './components/Search/search.component';
 import Container from './components/Container/container.component'
+import SkeletonCard from './components/Skeleton/skeleton.component';
 
 //styles
 import { Movies, SLink } from './components/Movies/movies.styles'
@@ -21,7 +22,8 @@ import { MovieContext } from './store/movie';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
 import { WrapperInside } from './components/Movie-specs/movie-specs.styles';
 import { ButtonPages } from './components/Button/button.styles';
-import SkeletonCard from './components/Skeleton/skeleton.component';
+
+//skeleton loading
 import { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
@@ -81,6 +83,7 @@ const App = () => {
             className="popular-movies">
               {isLoading && (
                 <SkeletonTheme baseColor="#b9b9b9" highlightColor="#9e9e9e">
+                  {/* modo hard code kkkkk (procurando uma solução menos idiota) */}
                   <SkeletonCard/>
                   <SkeletonCard/>  
                   <SkeletonCard/>  
