@@ -4,6 +4,9 @@ export const lightTheme = {
   fontColor: '#121212',
   border: '#FFC914',
   green: '#09BC8A',
+  lightGray: '#d3ded3',
+  lightGrayKey100: '#f1f1f1',
+  lightGrayKey50: '##c0c3c5',
   red: '#a83f39',
   gradient: 'linear-gradient(to top, #ffc914, #f9d20c, #f3da07, #ebe309, #e3eb12)',
   navbar: '#051923'
