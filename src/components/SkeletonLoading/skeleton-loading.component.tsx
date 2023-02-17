@@ -2,7 +2,7 @@
 import { RotatingSquare } from 'react-loader-spinner'
 import { RotateLoaderStyled, SkeletonStyled, SkeletonText, WrapperSkeleton } from './skeleton-loading.styles'
 
-const RotateLoading = () => {
+const SkeletonLoading = () => {
   return (
     <RotateLoaderStyled>
 
@@ -27,4 +27,4 @@ const RotateLoading = () => {
   )
 }
 
-export default RotateLoading
+export default SkeletonLoading
