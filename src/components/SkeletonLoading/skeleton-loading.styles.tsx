@@ -14,6 +14,7 @@ export const RotateLoaderStyled = styled.div`
     justify-content: center;
     align-items: center;
     margin: auto;
+    padding: 0;
 `
 
 export const WrapperSkeleton = styled.div`
@@ -28,23 +29,24 @@ export const SkeletonStyled = styled.div `
     width: 400px;
     height: 600px;
     background-color: ${props => props.theme.lightGray};
-    margin: 1rem;
+    margin: 0 1rem;
     border-radius: 1rem;
     animation: ${skeletonAnimation} 1s linear infinite alternate;
+
     @media(max-width: 768px) {
         width: 260px;
         height: 400px;
         overflow: hidden;
         margin: 0 1rem;
     }
-    `
+`
 
 export const SkeletonText = styled.div`
     background-color: ${props => props.theme.lightGray};
     width: 70%;
     height: 15px;
-    border-radius: 1rem;
-    margin: 2rem;
+    border-radius: 0.5rem;
+    margin: 1rem;
     align-self: flex-start;
     animation: ${skeletonAnimation} 1s linear infinite alternate;
 `
