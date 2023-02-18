@@ -12,12 +12,14 @@ import { Splide, SplideSlide } from '@splidejs/react-splide'
 import '@splidejs/splide/dist/css/splide.min.css'
 
 //components
+import SkeletonLoading from '../../components/SkeletonLoading/skeleton-loading.component'
 import Button from '../../components/Button/button.component'
 
 //icons
 import { RiArrowGoBackFill } from 'react-icons/ri'
-import SkeletonLoading from '../../components/SkeletonLoading/skeleton-loading.component'
 
+//image
+import ImageNotFoundPng from '../../assets/imageNotFound.jpg'
 
 
 const SearchedMovie = () => {
@@ -58,15 +60,21 @@ const SearchedMovie = () => {
         <Splide options={{
             perPage: 3, 
                 breakpoints: {
-                    768: {
+                    1024: {
                         perPage: 1,
+                        arrows: true,
+                    },
+                    1495: {
+                        perPage: 2,
+                        gap: '0.3rem'
                     },
                 },
             arrows: false,
             pagination: true,
             drag: 'free',
-            gap: '1rem'
-        }}>
+            gap: '1rem',
+        }}
+        >
         {isLoading ? <SkeletonLoading/> : (
             <>
             {searchMovie.map((movie: any) => {
@@ -75,7 +83,16 @@ const SearchedMovie = () => {
                     <Card key={movie.id}>
                         <SLink to={'/movie-details/' + movie.id}>
                         <h2>{movie.title}</h2>
-                        <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt="" />
+                        {
+                        movie.poster_path ? 
+                        (
+                            <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} /> 
+                        ) 
+                        : 
+                        (
+                            <img src={ImageNotFoundPng} alt="Imagem não encontrada!"/>
+                        )
+                        }
                         </SLink>
                     </Card>
                 </SplideSlide>
