@@ -1,5 +1,3 @@
-
-import { RotatingSquare } from 'react-loader-spinner'
 import { RotateLoaderStyled, SkeletonStyled, SkeletonText, WrapperSkeleton } from './skeleton-loading.styles'
 
 const SkeletonLoading = () => {
