@@ -20,6 +20,7 @@ import Button from '../Button/button.component'
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import { SkeletonTheme } from 'react-loading-skeleton';
+import moment from 'moment'
 
 const MovieSpecs = () => {
 
@@ -50,6 +51,9 @@ const MovieSpecs = () => {
         navigate('/')
     }
 
+    moment.locale();
+    
+
   return (
     <>
         <Wrapper>
@@ -65,7 +69,7 @@ const MovieSpecs = () => {
             )}
             {loading ? <Skeleton count={1} style={{width: '320px', marginLeft: '1rem'}} /> : (
                 <div>
-                    <h3> <BsCalendarCheckFill color='#09BC8A'/> Lançamento: {movieDetails.release_date}</h3>
+                    <h3> <BsCalendarCheckFill color='#09BC8A'/> Lançamento: {moment(movieDetails.release_date).format('L')}</h3>
                     <h3> <BsFillHeartFill color='#CC0000'/> Nota: {movieDetails.vote_average}</h3>
                     <h3> <BiTime /> Duração: {movieDetails.runtime} minutos</h3> 
                     <h3> <FaTheaterMasks color='#1B98E0'/> Gêneros</h3>
