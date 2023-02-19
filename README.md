@@ -1,5 +1,5 @@
 
-# Catálogo de Filmes usando a API The Movie DB.
+# Catálogo de Filmes usando API The Movie DB.
 
 Projeto Desenvolvido com React, TypeScript, Styled Components e diversas outras, para criar um catálogo de filmes, onde o usuário pode navegar pelas páginas e olhar os filmes, ou se preferir, pesquisar pelo nome do filme, ou da produtora, e também ver os detalhes e informações do filme desejado, como data de lançamento, gêneros, sinopse e mais.
 
@@ -62,6 +62,9 @@ E diversos outros como boas práticas no código, otimização e padronização.
 ## Screenshots
 
 
+![Screenshot](https://i.imgur.com/b52AhN1.png)
+
+
 ![Screenshot](https://i.imgur.com/89eUo3D.png)
 
 
@@ -80,7 +83,7 @@ E diversos outros como boas práticas no código, otimização e padronização.
 
 ## GIFs 
 
-![gif](https://i.imgur.com/RH8e2Jm.gif)
+![Gif](https://i.imgur.com/RH8e2Jm.gif)
 
 
 
