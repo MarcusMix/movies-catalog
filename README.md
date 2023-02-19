@@ -3,6 +3,9 @@
 
 Projeto Desenvolvido com React, TypeScript, Styled Components e diversas outras, para criar um catálogo de filmes, onde o usuário pode navegar pelas páginas e olhar os filmes, ou se preferir, pesquisar pelo nome do filme, ou da produtora, e também ver os detalhes e informações do filme desejado, como data de lançamento, gêneros, sinopse e mais.
 
+Acesse o projeto clicando [AQUI](https://filtering-animation-react-marcusmix.vercel.app) ou no link: https://filtering-animation-react-marcusmix.vercel.app 
+
+
 ## O projeto conta com:
 
 - Página inicial com os filmes lançados recentemente e com a opção de busca por nome do filme ou a produtora.
