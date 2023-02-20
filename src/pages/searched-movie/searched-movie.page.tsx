@@ -19,7 +19,7 @@ import Button from '../../components/Button/button.component'
 import { RiArrowGoBackFill } from 'react-icons/ri'
 
 //image
-import ImageNotFoundPng from '../../assets/imageNotFound.jpg'
+import ImageNotFoundPng from '../../assets/image-error-short.png'
 
 
 const SearchedMovie = () => {
@@ -42,7 +42,7 @@ const SearchedMovie = () => {
             setSearchMovie(dataSearch.results)
         } catch (error) {
             console.log(error)
-        }finally {
+        } finally {
             setIsLoading(false)
         }
     }
