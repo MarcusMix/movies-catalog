@@ -8,7 +8,7 @@ import { motion } from 'framer-motion'
 import MovieProps from "../../types/movies.types"
 
 //image
-import ImageNotFoundPng from '../../assets/imageNotFound.jpg'
+import ImageNotFoundPng from '../../assets/image-error-short.png'
 
 const Movie:FC<MovieProps>  = ({ movie })=> {
     return (
