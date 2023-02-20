@@ -25,7 +25,7 @@ import { SkeletonTheme } from 'react-loading-skeleton';
 import moment from 'moment'
 
 //image
-import imageNotFound from '../../assets/image-not-found-hori.jpg'
+import imageNotFound from '../../assets/image-error-wide.png'
 
 const MovieSpecs = () => {
 
@@ -81,9 +81,8 @@ const MovieSpecs = () => {
             {loading ? <Skeleton count={1} style={{width: '320px', marginLeft: '1rem'}} /> : (
                 <div>
                     <h3> <BsCalendarCheckFill color='#09BC8A'/> Lançamento: {moment(movieDetails.release_date).format('L')}</h3>
-                    <h3> <BsFillHeartFill color='#CC0000'/> Nota: 
-                        {movieDetails.vote_average === 0 ? "Sem nota" : movieDetails.vote_average}
-                    </h3>
+                    <h3> <BsFillHeartFill color='#CC0000'/> Nota: {movieDetails.vote_average === 0 ? ' não encontrada!' : movieDetails.vote_average} </h3>
+                   
                     <h3> <BiTime /> Duração: {movieDetails.runtime} minutos</h3> 
                     <h3> <FaTheaterMasks color='#1B98E0'/> Gêneros</h3>
                 </div>
@@ -100,7 +99,7 @@ const MovieSpecs = () => {
             {loading ? <Skeleton count={8} style={{width: '320px', margin: '1rem'}} /> : (
                 <h3> <RiFilePaper2Fill color='#F7CE5B'/> Sinópse</h3>
             )}
-            <p>{movieDetails.overview === "" ? "Descrição não encontrada!" : movieDetails.overview}</p> 
+            <p>{movieDetails.overview === "" ? "Sinópse não encontrada!" : movieDetails.overview}</p> 
             </SkeletonTheme>
             </MovieDisplay>
         </Wrapper>
