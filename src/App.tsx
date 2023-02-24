@@ -59,6 +59,10 @@ const App = () => {
 
   const handleMoreMovies = () => {
     setMoreMovies(moreMovies + 1)
+      window.scroll({
+        top: 0,
+        behavior: 'smooth'
+      })
   }
 
   const handleBackMovies = () => {
@@ -66,6 +70,10 @@ const App = () => {
           return setMoreMovies(moreMovies)
       }
       setMoreMovies(moreMovies - 1)
+      window.scroll({
+        top: 0,
+        behavior: 'smooth'
+      })
   }
 
   return (
