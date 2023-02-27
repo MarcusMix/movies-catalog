@@ -27,10 +27,13 @@ import { ButtonPages } from './components/Button/button.styles';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
+//types & inter
+import IMovies from './types/movieprops.types';
+
 const App = () => {
 
   //state
-  const [movies, setMovies] = useState<any[]>([]) // tipar da forma correta
+  const [movies, setMovies] = useState<IMovies[]>([])
   const [filtered, setFiltered] = useState<any[]>([])
   const [activeGenre, setActiveGenre] = useState<number>(0)
   const [isLoading, setIsLoading] = useState<boolean>(true)
