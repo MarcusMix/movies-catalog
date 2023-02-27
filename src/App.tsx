@@ -27,7 +27,7 @@ import { ButtonPages } from './components/Button/button.styles';
 import { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 
-//types & inter
+//types & interfaces
 import IMovies from './types/movieprops.types';
 
 const App = () => {
