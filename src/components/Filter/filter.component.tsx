@@ -10,8 +10,6 @@ import FilterProps from '../../types/filter.types'
 
 const Filter:FC<FilterProps> = ({ movies, setFiltered, setActiveGenre, activeGenre }) => {
 
-    // const [activeTab, setActiveTab] = useState<string>('todos')
-
     useEffect(() => {
         if(activeGenre === 0) {
             setFiltered(movies)
