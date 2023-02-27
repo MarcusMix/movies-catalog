@@ -10,7 +10,7 @@ import './index.css';
 import App from './App';
 
 //context
-import MovieProvider from './store/movie';
+import MovieProvider from './store/movie.context';
 
 //router
 import { BrowserRouter, Route, Routes } from 'react-router-dom'

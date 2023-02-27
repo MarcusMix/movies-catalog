@@ -16,7 +16,7 @@ import { CountPage } from './components/Navbar/navbar.styles';
 import { AnimatePresence } from 'framer-motion'
 
 //context
-import { MovieContext } from './store/movie';
+import { MovieContext } from './store/movie.context';
 
 //icons
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md'
