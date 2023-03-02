@@ -53,6 +53,9 @@ const MovieSpecs = () => {
 
     useEffect(() => {
         fetchMovies()
+        window.scroll({
+            top: 0,
+        })
     }, [])
 
     const handleBackPage = () => {
