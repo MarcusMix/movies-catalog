@@ -91,11 +91,9 @@ const Home = () => {
               <AnimatePresence>
                 {filtered.map((movie) => {
                   return (
-                    <a href="#topo">
-                        <SLink to={'/movie-details/' + movie.id}>
-                        <Movie key={movie.id} movie={movie}/> 
-                        </SLink>
-                    </a>
+                    <SLink to={'/movie-details/' + movie.id}>
+                    <Movie key={movie.id} movie={movie}/> 
+                    </SLink>
                   )
                 })}
               </AnimatePresence>
