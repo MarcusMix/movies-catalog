@@ -6,9 +6,6 @@ import reportWebVitals from './reportWebVitals';
 //css
 import './index.css';
 
-//app
-import App from './App';
-
 //context
 import MovieProvider from './store/movie.context';
 
@@ -18,9 +15,11 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 //pages
 import MovieDetails from './pages/movie-details/movie-details.page';
 import SearchedMovie from './pages/searched-movie/searched-movie.page';
+import Home from './pages/home/home.page';
 
 //components
 import Navbar from './components/Navbar/navbar.component';
+import Footer from './components/Footer/footer.component';
 
 //styles
 import { SLink } from './components/Movies/movies.styles';
@@ -30,9 +29,6 @@ import { NavbarContent, TitleYellow } from './components/Navbar/navbar.styles';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from './theme/theme';
 import { GlobalStyles } from './theme/globalStyles';
-import Footer from './components/Footer/footer.component';
-import { FooterContent } from './components/Footer/footer.styles';
-
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -53,7 +49,7 @@ root.render(
             </NavbarContent>
             </Navbar>
             <Routes>
-              <Route path='/' element={<App />}/>
+              <Route path='/' element={<Home />}/>
               <Route path='/movie-details/:name' element={<MovieDetails/>}/>
               <Route path='/searched/:movie' element={<SearchedMovie/>}/>
             </Routes>
