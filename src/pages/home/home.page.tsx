@@ -109,7 +109,7 @@ const Home = () => {
                 <ButtonPages 
                     onClick={handleBackMovies}
                     >
-                        {moreMovies - 1 === 0 ? moreMovies : moreMovies -1}
+                    {moreMovies - 1 === 0 ? moreMovies : moreMovies -1}
                         
                 </ButtonPages>
               )}
