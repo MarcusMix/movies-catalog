@@ -22,9 +22,9 @@ export const FormStyled = styled.form `
     }
     
     & svg {
-        background: red;
        position: fixed;
-       left: 40%;
-       color: red;
+       margin-left: 50px;
+       margin-top: 15px;
+       color: #fff;
     }
 `
