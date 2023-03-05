@@ -7,6 +7,9 @@ import { useNavigate } from "react-router-dom"
 //styles
 import { FormStyled } from "./search.styles"
 
+//icons
+import { GoSearch } from 'react-icons/go'
+
 const Search = () => {
 
     const navigate = useNavigate()
@@ -18,11 +21,18 @@ const Search = () => {
         navigate('/searched/' + input)
     }
 
+    const handleSearchChange = (e :any) => {
+        setInput(e.target.value)
+    }
+
     return (
         <FormStyled onSubmit={submitHandler}>
             <div>
+                <div>
+                    <GoSearch color='#fff'/>
+                </div>
                 <input 
-                    onChange={(e) => setInput(e.target.value)} 
+                    onChange={handleSearchChange} 
                     type="text" 
                     value={input}
                     placeholder="Pesquisar filme..."
