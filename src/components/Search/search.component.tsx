@@ -29,7 +29,7 @@ const Search = () => {
         <FormStyled onSubmit={submitHandler}>
             <div>
                 <div>
-                    <GoSearch color='#fff'/>
+                    <GoSearch color='#f1f1f1'/>
                 </div>
                 <input 
                     onChange={handleSearchChange} 
