@@ -38,7 +38,7 @@ Acesse o projeto clicando [AQUI](https://movies-catalog-marcusmix.vercel.app) ou
 Para fazer o deploy desse projeto rode no terminal
 
 ```bash
-  git clone https://github.com/MarcusMix/filtering-animation-react
+  git clone https://github.com/MarcusMix/movies-catalog
 ```
 
 
