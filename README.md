@@ -102,5 +102,5 @@ E diversos outros como boas práticas no código, otimização e padronização.
 
 Usando TypeScript para uma maior segurança do código, ainda não está perfeito, mas a cada dia vou avançando e refatorando e melhorando o código
 
-Sujestão? Pode me falar!
+Sugestão? Pode me falar!
 
