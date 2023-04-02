@@ -1,5 +1,7 @@
 import { SectionMovie, SectionMovieItem } from './movie-not-found';
 
+import React from 'react';
+
 const MovieNotFound = () => {
   return (
     <SectionMovie>
