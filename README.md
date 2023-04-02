@@ -38,7 +38,7 @@ Acesse o projeto clicando [AQUI](https://movies-catalog-marcusmix.vercel.app) ou
 Para fazer o deploy desse projeto rode no terminal
 
 ```bash
-  git clone https://github.com/MarcusMix/filtering-animation-react
+  git clone https://github.com/MarcusMix/movies-catalog
 ```
 
 
@@ -102,5 +102,5 @@ E diversos outros como boas práticas no código, otimização e padronização.
 
 Usando TypeScript para uma maior segurança do código, ainda não está perfeito, mas a cada dia vou avançando e refatorando e melhorando o código
 
-Sujestão? Pode me falar!
+Sugestão? Pode me falar!
 
