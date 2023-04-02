@@ -1,4 +1,4 @@
-import { SectionMovie, SectionMovieItem } from './movie-not-foun';
+import { SectionMovie, SectionMovieItem } from './movie-not-found';
 
 const MovieNotFound = () => {
   return (
